@@ -5,7 +5,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def index():
-    url = "https://www.investing.com/equities/apple-computer-inc"
+    url = "https://www.investing.com/"
     html_content = fetch_data(url)
     price = parse_data(html_content) if html_content else "Data not available"
     return render_template('index.html', price=price)
